@@ -245,12 +245,12 @@ class ROIHeads(torch.nn.Module):
         sampled_idxs = torch.arange(gt_classes.shape[0])
         return sampled_idxs, gt_classes[sampled_idxs]
 
-        sampled_fg_idxs, sampled_bg_idxs = subsample_labels(
-            gt_classes, self.batch_size_per_image, self.positive_fraction, self.num_classes
-        )
+#         sampled_fg_idxs, sampled_bg_idxs = subsample_labels(
+#             gt_classes, self.batch_size_per_image, self.positive_fraction, self.num_classes
+#         )
 
-        sampled_idxs = torch.cat([sampled_fg_idxs, sampled_bg_idxs], dim=0)
-        return sampled_idxs, gt_classes[sampled_idxs]
+#         sampled_idxs = torch.cat([sampled_fg_idxs, sampled_bg_idxs], dim=0)
+#         return sampled_idxs, gt_classes[sampled_idxs]
 
     @torch.no_grad()
     def label_and_sample_proposals(
